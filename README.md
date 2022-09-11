@@ -59,3 +59,42 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Flow Git Sircle
+
+1. Masuk branch Master
+2. Lakukan Pull : 
+
+```
+    git pull
+```
+3. Melakukan perubahan di local.
+4. Membuat branch baru :
+
+```
+    git checkout -b "{}"
+```
+
+5. Menambahkan perubahan ke branch yang baru :
+
+```
+    git add .
+```
+
+6. Melakukan commit untuk perubahan yang dibuat :
+
+```
+    git commit -m "{}"
+```
+
+7. Melakukan push ke repository Github :
+
+```
+    git push --set-upstream -origin [nama branch]
+```
+
+8. Lakukan pull request di Github.
+
+
+note : 
+> {} = bisa diisi apa saja.
