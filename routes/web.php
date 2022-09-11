@@ -1,18 +1,30 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\RegisterController;
+use App\Models\Post;
+use PhpParser\Node\Stmt\Foreach_;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home',[
+        "tittle" => "Home"
+    ]);
+})->name("home");
+
+Route::get('/about',function(){
+    return view('about',[
+        "tittle" => "About",
+        "name" => "Acep",
+        "email" => "Acep@gmail.com",
+        "img" => "logo.jpg"
+    ]);
 });
+
+Route::get('/blog', [PostController::class, 'index']);
+
+Route::get('/login',[LoginController::class, 'index']);
+
+Route::get('/register',[RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store']);
